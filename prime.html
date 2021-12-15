@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime</title>
+</head>
+<body>
+<p id="Display"> Hiển thị 20 số nguyên tố đầu tiên</p>
+</body>
+<script>
+    let n = parseInt(prompt("nhập vào n là số lượng số nguyên tố cần hiển thị"));
+    let num;
+    let count=1;
+    let text = "";
+    while(count <= n) {
+        for (num = 2; count <= n; num++) {
+            if (num < 2) {
+                continue;
+            } else if (num === 2) {
+                text = text + num + "; ";
+                count++;
+                // console.log(num);
+            } else {
+                let isPrime = true;
+                for (let i = 2; i < num; i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                    }
+                }
+                if (isPrime === true) {
+                    text = text + num + "; ";
+                    count++;
+                    // console.log(num);
+                    console.log(text);
+                }
+            }
+        }
+    }
+        console.log(text);
+    document.getElementById("Display").innerHTML= n + " số nguyên tố đầu tiên là " + text;
+
+</script>
+
+</html>
